@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>seaJs demo</title>
+</head>
+<body>
+	<script src="sea-modules/sea/sea.js"></script>
+	<script>
+		// seajs基本配置
+		seajs.config({
+			// 基本路径
+			base: "sea-modules/",
+			// 设置文件别名，方便在引入该文件时，直接写该别名即可
+			alias: {
+				"jquery": "jquery/jquery.min.js",
+				"utils": "../static/utils"
+			}
+		})
+		// 定义入口文件
+		seajs.use('./static/main.js', function (main) {
+			main.mainSay()
+		})
+	</script>
+</body>
+</html>
